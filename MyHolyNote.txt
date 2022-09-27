@@ -1,1 +1,2 @@
-It's the day when i frist upload my codes to gitHub
+It's the day when i frist upload my codes to gitHub.
+One more commit.
