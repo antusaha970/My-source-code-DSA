@@ -1,4 +1,6 @@
 #include<iostream>
+#include<climits>
+#include<map>
 using namespace std;
 
 struct Node
@@ -14,11 +16,37 @@ bool isCircular(Node *head){
         return false;
     
     Node*tmp = head->next;
+
     while (tmp!=NULL && tmp!=head)
     {
         tmp = tmp->next;
     }
     if (tmp==NULL)
+    {
+        return false;
+    }
+    if(tmp==head)
+        return true;
+}
+
+bool isCircularV2(Node *head){
+    if(head==NULL)
+        return true;
+    if(head->next==NULL)
+        return false;
+    
+    Node*tmp = head->next;
+    while (tmp!=NULL && tmp!=head && tmp->val!=INT_MIN)
+    {
+        tmp = tmp->next;
+        tmp->val = INT_MIN;
+
+    }
+    if (tmp->val==INT_MIN)
+    {
+        return true;
+    }
+    else if (tmp==NULL)
     {
         return false;
     }
@@ -38,8 +66,10 @@ int main()
     l2->val = 2;
     head->next = l1;
     l1->next = l2;
-    l2->next = head;
-    if(isCircular(head))
+    l2->next = l1;
+    map<Node*,bool>m;
+    cout<<m[head]<<endl;
+    if(isCircularV2(head))
         cout<<"This is a circular linked list "<<endl;
     else
         cout<<"This is not a circular linked list"<<endl;
