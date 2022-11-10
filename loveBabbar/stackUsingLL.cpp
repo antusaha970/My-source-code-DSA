@@ -70,9 +70,10 @@ class stack{
 
 int main()
 {
-    stack s;
-    s.push(5);
-    cout<<s.peek()<<endl;
-    cout<<s.isEmpty();
+    int s= 8;
+    char j = '0'+1+1+1+1+1; 
+    cout<<j;
+
+    
     return 0;
 }
