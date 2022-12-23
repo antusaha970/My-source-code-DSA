@@ -10,7 +10,7 @@ int main()
         cin>>arr[i];
     }
     int k;
-    cout<<"Enter the index you want to delete"<<endl;
+    cout<<"Enter the index you want to delete"<<endl; 
     cin>>k;
     for(int i = k-1 ;i < size;i++){
         arr[i] = arr[i+1];
